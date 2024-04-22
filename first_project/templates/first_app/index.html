@@ -1,11 +1,15 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>First App</title>
+    <title>A planet</title>
+    <link rel="stylesheet" href="{% static 'css/mystyle.css' %}" type="text/css">
 </head>
 <body>
 <h1>Hello, this is index.html</h1>
 {{ insert_index }}
+<h2>Here's a pic of the planet earth</h2>
+<img src="{% static 'images/planet.jpg' %}" alt = "Uh Oh, didn't show but trust me it's a planet.">
 </body>
 </html>
