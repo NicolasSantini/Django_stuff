@@ -7,5 +7,12 @@
 <body>
 
 {{ insert_help }}
+<br>
+<a href="{% url 'first_app:webpages' %}">You can go here to check the webpages</a>
+<br>
+<a href="{% url 'first_app:index' %}">here to go back to the index page</a>
+<br>
+
+<a href="{% url 'forms:index' %}">or here to change completely app and go to forms</a>
 </body>
 </html>

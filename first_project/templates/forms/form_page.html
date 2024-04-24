@@ -1,6 +1,10 @@
 <!DOCTYPE html>
+{% extends "forms/index.html"%}
 {% load widget_tweaks %}
+
 <html lang="en">
+{% block body_block%}
+
 <head>
     <meta charset="UTF-8">
     <title>Forms</title>
@@ -46,4 +50,6 @@
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.9.11/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
+{% endblock %}
+
 </html>
