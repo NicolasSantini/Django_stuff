@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-static-top navbar-light bg-light">
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'forms:registration' %}">REGISTER</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'admin:index' %}">ADMIN</a>
+            </li>
+
+            {% if user.is_authenticated %}
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'forms:user_logout' %}">LOGOUT</a>
+            </li>
+            {% else %}
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'forms:user_login' %}">LOGIN</a>
+            </li>
+
+            {% endif %}
+
+
+        </ul>
+    </div>
+</nav>
+
+<div class="container mt-4">
+    {% block body_block %}
+
+
+    {% endblock %}
+</div>
+
+
+</body>
+</html>

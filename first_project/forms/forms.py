@@ -1,7 +1,8 @@
 from django import forms
 from django.core import validators
 from first_app.models import User
-
+from django.contrib.auth.models import User
+from forms.models import UserProfileInfo
 ## example of personalized validator
 """
 def check_for_z(value):
@@ -31,6 +32,21 @@ class NewUserForm(forms.ModelForm):
     class Meta:
         model = User
         fields = '__all__'
+
+
+class UserForm(forms.ModelForm):
+    password = forms.CharField(widget=forms.PasswordInput())
+
+    class Meta():
+        model = User
+        fields = ['username', 'email', 'password']
+
+
+class UserProfileInfoForm(forms.ModelForm):
+    class Meta():
+        model = UserProfileInfo
+        fields = ('portfolio_site','profile_pic')
+
 
 ## replaced with the validator attribute
 '''

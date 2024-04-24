@@ -19,7 +19,10 @@ from django.contrib import admin
 from django.urls import path
 from first_app import views
 from django.conf.urls import include
+from first_project import settings
 from forms import views
+from django.conf.urls.static import static
+
 
 
 urlpatterns = [
@@ -28,3 +31,6 @@ urlpatterns = [
     path('first_app/',include("first_app.urls")),
     path('forms/',include("forms.urls")),
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
