@@ -1,5 +1,6 @@
 from django import forms
 from django.core import validators
+from first_app.models import User
 
 ## example of personalized validator
 """
@@ -25,6 +26,11 @@ class FormName(forms.Form):
         if email != v_email:
             raise forms.ValidationError('Email must match')
 
+
+class NewUserForm(forms.ModelForm):
+    class Meta:
+        model = User
+        fields = '__all__'
 
 ## replaced with the validator attribute
 '''
