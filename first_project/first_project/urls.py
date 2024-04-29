@@ -20,7 +20,6 @@ from django.urls import path
 from first_app import views
 from django.conf.urls import include
 from first_project import settings
-from forms import views
 from django.conf.urls.static import static
 
 
@@ -30,6 +29,8 @@ urlpatterns = [
     path("",views.index,name="index"),
     path('first_app/',include("first_app.urls")),
     path('forms/',include("forms.urls")),
+    path('CBV/',include("CBV.urls")),
+
 ]
 
 if settings.DEBUG:
